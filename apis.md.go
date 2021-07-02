@@ -58,6 +58,90 @@ func (c *WorkwxApp) execJSCode2Session(req reqJSCode2Session) (respJSCode2Sessio
 	return resp, nil
 }
 
+// execGetProviderToken 获取服务商凭证
+func (c *WorkwxApp) execGetProviderToken(req reqGetProviderToken) (respGetProviderToken, error) {
+	var resp respGetProviderToken
+	err := c.executeQyapiJSONPost("/cgi-bin/service/get_provider_token", req, &resp, true)
+	if err != nil {
+		return respGetProviderToken{}, err
+	}
+	if bizErr := resp.TryIntoErr(); bizErr != nil {
+		return respGetProviderToken{}, bizErr
+	}
+
+	return resp, nil
+}
+
+// execGetSuiteToken 获取第三方应用凭证
+func (c *WorkwxApp) execGetSuiteToken(req reqGetSuiteToken) (respGetSuiteToken, error) {
+	var resp respGetSuiteToken
+	err := c.executeQyapiJSONPost("/cgi-bin/service/get_suite_token", req, &resp, true)
+	if err != nil {
+		return respGetSuiteToken{}, err
+	}
+	if bizErr := resp.TryIntoErr(); bizErr != nil {
+		return respGetSuiteToken{}, bizErr
+	}
+
+	return resp, nil
+}
+
+// execGetCorpToken 获取企业凭证
+func (c *WorkwxApp) execGetCorpToken(req reqGetCorpToken) (respGetCorpToken, error) {
+	var resp respGetCorpToken
+	err := c.executeQyapiJSONPost("/cgi-bin/service/get_corp_token", req, &resp, true)
+	if err != nil {
+		return respGetCorpToken{}, err
+	}
+	if bizErr := resp.TryIntoErr(); bizErr != nil {
+		return respGetCorpToken{}, bizErr
+	}
+
+	return resp, nil
+}
+
+// execGetPreAuthCode 获取预授权码
+func (c *WorkwxApp) execGetPreAuthCode(req reqGetPreAuthCode) (respGetPreAuthCode, error) {
+	var resp respGetPreAuthCode
+	err := c.executeQyapiGet("/cgi-bin/service/get_pre_auth_code", req, &resp, true)
+	if err != nil {
+		return respGetPreAuthCode{}, err
+	}
+	if bizErr := resp.TryIntoErr(); bizErr != nil {
+		return respGetPreAuthCode{}, bizErr
+	}
+
+	return resp, nil
+}
+
+// execGetPermanentCode 获取永久授权码
+func (c *WorkwxApp) execGetPermanentCode(req reqGetPermanentCode) (respGetPermanentCode, error) {
+	var resp respGetPermanentCode
+	err := c.executeQyapiJSONPost("/cgi-bin/service/get_permanent_code", req, &resp, true)
+	if err != nil {
+		return respGetPermanentCode{}, err
+	}
+	if bizErr := resp.TryIntoErr(); bizErr != nil {
+		return respGetPermanentCode{}, bizErr
+	}
+
+	return resp, nil
+}
+
+// execGetAuthInfo 获取企业授权信息
+func (c *WorkwxApp) execGetAuthInfo(req reqGetAuthInfo) (respGetAuthInfo, error) {
+	var resp respGetAuthInfo
+	err := c.executeQyapiJSONPost("/cgi-bin/service/get_auth_info", req, &resp, true)
+	if err != nil {
+		return respGetAuthInfo{}, err
+	}
+	if bizErr := resp.TryIntoErr(); bizErr != nil {
+		return respGetAuthInfo{}, bizErr
+	}
+
+	return resp, nil
+}
+
 // execUserGet 读取成员
 func (c *WorkwxApp) execUserGet(req reqUserGet) (respUserGet, error) {
 	var resp respUserGet

@@ -8,6 +8,19 @@ Name|Request Type|Response Type|Access Token|URL|Doc
 `execGetJSAPITicket`|`reqJSAPITicket`|`respJSAPITicket`|+|`GET /cgi-bin/get_jsapi_ticket`|[获取企业的jsapi_ticket](https://open.work.weixin.qq.com/api/doc/90000/90136/90506)
 `execGetJSAPITicketAgentConfig`|`reqJSAPITicketAgentConfig`|`respJSAPITicket`|+|`GET /cgi-bin/ticket/get`|[获取应用的jsapi_ticket](https://open.work.weixin.qq.com/api/doc/90000/90136/90506)
 `execJSCode2Session`|`reqJSCode2Session`|`respJSCode2Session`|+|`GET /cgi-bin/miniprogram/jscode2session`|[临时登录凭证校验code2Session](https://open.work.weixin.qq.com/api/doc/90000/90136/91507)
+`execGetProviderToken`|`reqGetProviderToken`|`respGetProviderToken`|-|`POST /cgi-bin/service/get_provider_token`|[获取服务商凭证get_provider_token](https://open.work.weixin.qq.com/api/doc/90001/90143/91200)
+`execGetSuiteToken`|`reqGetSuiteToken`|`respGetSuiteToken`|-|`POST /cgi-bin/service/get_suite_token`|[获取第三方应用凭证get_suite_token](https://open.work.weixin.qq.com/api/doc/90001/90143/90600)
+`execGetCorpToken`|`reqGetCorpToken`|`respGetCorpToken`|-|`POST /cgi-bin/service/get_corp_token`|[获取企业凭证get_corp_token](https://open.work.weixin.qq.com/api/doc/90001/90143/90605)
+
+# 应用授权
+
+## API calls
+
+Name|Request Type|Response Type|Access Token|URL|Doc
+:---|------------|-------------|------------|:--|:--
+`execGetPreAuthCode`|`reqGetPreAuthCode`|`respGetPreAuthCode`|+|`GET /cgi-bin/service/get_pre_auth_code`|[获取预授权码get_pre_auth_code](https://open.work.weixin.qq.com/api/doc/90001/90143/90601)
+`execGetPermanentCode`|`reqGetPermanentCode`|`respGetPermanentCode`|+|`POST /cgi-bin/service/get_permanent_code`|[获取永久授权码get_permanent_code](https://open.work.weixin.qq.com/api/doc/90001/90143/90603)
+
 
 # 成员管理
 
